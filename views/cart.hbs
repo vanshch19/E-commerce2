@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/cart.css">
+    <!-- font awsome link from cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+<body class="body">
+    
+    {{> cartnavbar}}
+
+    <br>
+
+
+    <!-- Cart Body -->
+    <div class="container1">
+        <div class="container1inner">
+            <div class="left">
+                <div class="cartnamediv leftitems">
+                    <a class="cartnameanchor" href="">Flipkart ({{cartCount}})</a>
+                </div>
+
+                <div class="Deladdress leftitems">
+                    <div class="Deladdressleft">
+                        <span class="Delivertext">Deliver to: </span> <span class="username">Vansh Chaudhary, 110059</span>
+                        <div class="useraddressdiv">A-52 , jeewan park , uttam nagar , new delhi, Som bazar road, New Delhi</div>
+                    </div>
+
+                    <div class="Deladdressright">
+                        <button class="change">Change</button>
+                    </div>
+                </div>
+
+                <div class="cartproductsdiv">
+                    {{#each cartdetails as |p|}}
+                    <div class="cartitems">
+                        <div class="cartiteminfo">
+                            <a class="cartitemimg" href="">
+                                <div>
+                                    <img width="150px" height="112px" src="{{p.id.imageUrl}}" alt="">
+                                </div>
+                            </a>
+
+                            <div class="specification">
+                                <div class="cartitemnamediv">
+                                    <a class="cartitemname" href="">{{p.id.name}}</a>
+                                </div>
+                                <div class="cartitemdescription">
+                                    <span class="description">{{p.id.feature1}}, {{p.id.feature2}}, {{p.id.feature3}}, </span>
+                                </div>
+                                <div class="cartitemseller">
+                                    <span class="seller">Seller: <span>MTAILMODEECOM <img width="70px" src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt=""></span> </span>
+                                </div>
+                                <div class="cartitemrate">
+                                    <span class="rate">{{p.id.price}}</span>
+                                </div>
+                            </div>
+
+                        
+                            <div class="Deltimediv">
+                                <span class="deliverytime">Deliver by Tomorrow, Mon | <span class="cartitemdelcharge">Free</span></span>
+                            </div>
+                        </div>
+
+                        <div class="cartitembtndiv">
+                            <div class="quantitydiv">
+                                <div class="minusbtndiv"><button productId="{{p.id.id}}" class="minusbtn">-</button></div>
+                                <input  productId="{{p.id.id}}" class="qtyinp" type="text" value="{{p.quantity}}">
+                                <div class="plusbtndiv"><button productId="{{p.id.id}}" class="plusbtn">+</button></div>
+                            </div>
+                            <div class="otherbtn">
+                                <div class="saveforlaterdiv"><a class="saveforlater" href="">SAVE FOR LATER</a></div>
+                                <div class="removediv"><a class="remove" href="/userfunctionality/removeproduct?productId={{p.id.id}}">REMOVE</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+
+                </div>
+
+                <div class="placeorderdiv">
+                    <button totalAmount ="{{totalAmount}}" class="placeorder">PLACE ORDER</button>
+                </div>
+
+            </div>
+
+            
+            
+            <div class="right">
+                <div class="payment">
+                    <div class="pricedetaildiv paymentitems">
+                        <span class="pricedetail">PRICE DETAILS</span>
+                    </div>
+                    
+                    <div class="pricediv paymentitems">
+                        Price ({{cartCount}} item)
+                        <span class="mrp">{{totalPrice}}</span>
+                    </div>
+
+                    <div class="discountdiv paymentitems">
+                        Discount
+                        <span class="discount">-{{totalDiscount}}</span>
+                    </div>
+
+                    <div class="deliverychargesdiv paymentitems">
+                        Delivery Charges
+                        <span class="DelCharges">Free</span>
+                    </div>
+
+                    <div class="totalamountdiv paymentitems">
+                        <span class="totalamounttext">Total Amount</span>
+                        <span class="totalamountnum">{{totalAmount}}</span>
+                    </div>
+
+                    <div class="savedDiv paymentitems">
+                        <span class="saved">You will save <span class="save">{{totalDiscount}}</span>rs on this order</span>
+                    </div>
+                </div>
+
+                <div class="securepayment"></div>
+            </div>
+        
+    </div>
+  </div>  
+
+  <br><br>
+
+  <footer>
+    <div class="cartfooterdiv">
+        <div class="cartfooteritemsdiv">
+            <div class="cartfooterleftdiv">
+                <div class="cartfooteritems">
+                    <a class="cartfooteritemsanchor" href="">Policies: Returns Policy | </a>
+                </div>
+                <div class="cartfooteritems">
+                    <a class="cartfooteritemsanchor" href="">Terms of use | </a>
+                </div>
+                <div class="cartfooteritems">
+                    <a class="cartfooteritemsanchor" href="">Security | </a>
+                </div>
+                <div class="cartfooteritems">
+                    <a class="cartfooteritemsanchor" href="">Privacy</a>
+                </div>
+                <div class="cartfooteritems">
+                    <a class="cartfooteritemsanchor" href="">Infringement</a>
+                </div>
+                <div class="cartfooteritems copywrite">
+                    © 2007-2013 Flipkart.com
+                </div>
+            </div>
+            
+            <div class="cartfooterrightdiv">
+                <div class="cartfooteritems">
+                    Need help? Visit the <a href="" class="helpcenter">Help Center</a> or <a href="" class="cartcontactus">Contact Us</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </footer>
+
+
+  <script src="/js/cart.js"></script>
+  <script src="/js/checkout.js"></script>
+
+</body>
+</html>

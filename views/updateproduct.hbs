@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/addproducts.css">
+    <!-- font awsome link from cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    {{> navbar}}
+
+
+
+    <div class="formdiv">
+        <form action="/admin/updateproduct" class="addProduct" method="POST" enctype="multipart/form-data">
+            Upload Image: <input value="{{product.imageUrl}}" type="file" class="image" name="image"><br>
+            {{!-- <label for="" class="formLabels">Upload</label>
+            <input value="{{product.imageUrl}}" type="text" name="image" class="image formItems" placeholder="Enter ImageUrl"> <br> --}}
+
+            <label for="name" class="formLabels">Name:</label>
+            <input value="{{product.name}}" id="name" type="text" class="name formItems" placeholder="Enter Name" name="name"><br>
+            {{!-- <textarea type="text" class="description" name="description" placeholder="enter description"></textarea> --}}
+
+            <label for="feature1" class="formLabels">Feature 1:</label>
+            <input value="{{product.feature1}}" id="feature1" type="text" name="feature1" class="feature1 formItems" placeholder="enter feature 1"><br>
+
+            <label for="feature2" class="formLabels">Feature 2:</label>
+            <input value="{{product.feature2}}" id="feature2" type="text" name="feature2" class="feature2 formItems" placeholder="enter feature 2"><br>
+
+            <label for="feature3" class="formLabels">Feature 3:</label>
+            <input value="{{product.feature3}}" id="feature3"type="text" name="feature3" class="feature3 formItems" placeholder="enter feature 3"><br>
+
+            <label for="warranty" class="formLabels">Warranty:</label>
+            <input value="{{product.warranty}}" id="warranty" type="text" name="warranty" class="warranty formItems" placeholder="enter warranty"><br>
+
+            <label for="price" class="formLabels">Price:</label>
+            <input value="{{product.price}}" id="price" type="text" class="price formItems" placeholder="Enter Price" name="price"><br>
+
+            <label for="discount" class="formLabels">Discount:</label>
+            <input value="{{product.discount}}" id="dicount" type="text" class="discount formItems" placeholder="Enter discount" name="discount"><br>
+
+            <label for="category" class="formLabels">Category:</label>
+            <input value="{{product.category}}" id="category" type="text" class="category formItems" placeholder="Enter type" name="category"><br>
+            <br>
+
+            <input value="{{product._id}}" name="productId" type="hidden"></input>
+
+            <button type="submit" class="submitBtn">Add Product</button>
+        </form>
+    </div>
+
+
+
+     <!-- footer section starts here -->
+     {{> footer}}
+
+
+
+</body>
+</html>
+
+

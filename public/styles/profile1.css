@@ -1,0 +1,517 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* padding-bottom: 100px; */
+}
+
+/* .scroll-container {
+    overflow-x: hidden;
+    white-space: nowrap;
+    
+} */
+
+/********  Navbar Styling  **********/
+
+.navbar1{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 80px;
+    background-color: #2874f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+}
+
+.navdiv{
+    display: flex;
+    /* gap: 10px; */
+}
+
+.logodiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    width: 120px;
+    height: 35px;
+}
+
+.explore{
+    margin-left: 10px;
+    font-size: 15px;
+    font-style: italic;
+    text-decoration: none;
+    color: white;   
+    font-weight: 550;
+}
+
+.explore:hover{
+    text-decoration: underline;
+}
+
+.plus{
+    color: yellow;
+    font-weight: 550;
+}
+
+.plusimg{
+    width: 13px;
+}
+
+.searchdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.searchinp{
+    height: 45px;
+    width: 480px;
+    /* position: relative; */
+    margin: 0 20px;
+    padding: 0 20px;
+    font-size: 18px;
+    box-shadow: -5px -5px 5px rgba(0,0,0,0.1),
+    5px 5px 5px rgba(0,0,0,0.1);
+    border: none;
+    outline: none;
+}
+
+.searchinp::placeholder{
+    font-size: 17px;
+}
+
+.searchbtn{
+    position: absolute;
+    top: 6.7px;
+    right: 21px;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.searchimg{
+    font-size: 20px;
+    color: #2874f0;
+}
+
+.flipkart{
+    display: flex;
+    align-items: center;
+}
+
+.flipkartanchor{
+    position: relative;
+}
+
+.flipkartcontent{
+    width: 250px;
+    position: absolute;
+    right: -70px;
+
+}
+
+
+/* To make dropdown hoverable */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    box-shadow: -5px -5px 20px rgba(0,0,0,0.2),
+    5px 5px 20px rgba(0,0,0,0.2);
+}
+
+.dropdown .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+}
+
+.sellerdiv{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.morediv{
+    display: flex;
+    align-items: center;
+    margin-left: 18px;
+}
+
+.moreanchor{
+    position: relative;
+}
+
+.morecontent{
+    position: absolute;
+    width: 250px;
+    right: -85px;
+}
+
+.cartdiv{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.cartimg{
+    color: white;
+    position: relative;
+}
+
+.cartitemnumdiv{
+    position: absolute;
+    background-color: #df6060;
+    bottom: 9px;
+    right: -5px;
+    width: 27px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-weight: 100;
+    padding: 10px;
+}
+
+
+/*    Carousel    */
+#carouselExampleAutoplaying{
+    margin-top: 80px;
+}
+
+/* #carouselExample{
+    position: relative;
+} */
+
+
+/*   ProductsBox   */
+.productsBox{
+    display: flex;
+}
+
+.productsBoxInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+}
+
+.productsBoxInfoh2{
+    width: 175px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.productsBoxInfoimg{
+    margin-top: 10px;
+}
+
+
+/* viewallBtn */
+#viewallBtnElec{                   /*  viewallBtn ko alag se id deke style kiya hai kyu ki bo class se styling nahi lera tha  */
+    padding: 10px 25px;         
+    font-weight: 600;           
+}         
+
+#viewallBtnBeauty{
+    padding: 10px 25px;         
+    font-weight: 600;           
+}
+         
+
+.products{
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    position: relative;
+    overflow-x: auto;
+}
+
+ 
+
+
+/*   Electronics   */
+.electronics{
+    /* display: flex; */
+}
+
+.itemimg{
+    width: 250px;
+    height: 250px;
+    transition: transform .2s;
+}
+
+.itemimg:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.itemtitlediv{
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.itemprice{
+    /* font-size: 20px; */
+    margin-bottom: 5px;
+}
+
+.itemcompany{
+    color: gray;
+    font-size: 18px;
+}
+
+
+/* items caraousel */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f1f4fd;
+  } */
+  
+  .container {
+    max-width: 1200px;
+    /* width: 100%; */
+  }
+  
+  .slider-wrapper {
+    position: relative;
+  }
+  
+  .slider-wrapper .slide-button {
+    position: absolute;
+    top: 50%;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+    color: black;
+    display: flex;
+    cursor: pointer;
+    font-size: 2.2rem;
+    background: gray;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 50%; */
+    transform: translateY(-50%);
+    height: 120px;
+  }
+  
+  .slider-wrapper .slide-button:hover {
+    background: #404040;
+  }
+  
+  .slider-wrapper .slide-button#prev-slide {
+    left: 0px;
+    display: none;
+  }
+  
+  .slider-wrapper .slide-button#next-slide {
+    right: 0px;
+  }
+  
+  .slider-wrapper .image-list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 18px;
+    font-size: 0;
+    list-style: none;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+    scrollbar-width: hidden;
+  }
+  
+  .slider-wrapper .image-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slider-wrapper .image-list .image-item {
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .container .slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slider-scrollbar .scrollbar-track {
+    background: #ccc;
+    width: 100%;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .slider-scrollbar:hover .scrollbar-track {
+    height: 4px;
+  }
+  
+  .slider-scrollbar .scrollbar-thumb {
+    position: absolute;
+    background: #000;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    cursor: grab;
+    border-radius: inherit;
+  }
+  
+  .slider-scrollbar .scrollbar-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+  }
+  
+  .slider-scrollbar .scrollbar-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+  }
+  
+  /* Styles for mobile and tablets */
+  @media only screen and (max-width: 1023px) {
+    .slider-wrapper .slide-button {
+      display: none !important;
+    }
+  
+    .slider-wrapper .image-list {
+      gap: 10px;
+      margin-bottom: 15px;
+      scroll-snap-type: x mandatory;
+    }
+  
+    .slider-wrapper .image-list .image-item {
+      width: 280px;
+      height: 380px;
+    }
+  
+    .slider-scrollbar .scrollbar-thumb {
+      width: 20%;
+    }
+  }
+   
+
+  /* items caraousel end */
+
+
+
+/*   Footer Styling    */
+.footer{
+    background-color: #172337;
+    padding: 40px;
+}
+
+.box1{
+    display: flex;
+    justify-content: space-around;
+    /* gap: 30px; */
+    margin-bottom: 50px;
+    /* border-bottom: 1px solid white; */
+}
+
+.box1items{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.box1heading{
+    margin-bottom: 10px;
+    color: #878787;
+}
+
+.box1anchors{
+    text-decoration: none;
+    color: white;
+}
+
+.box1anchors:hover{
+    text-decoration: underline;
+}
+
+.mail{
+    margin-left: 40px;
+    border-left: 1px solid #878787;
+    padding-left: 30px;
+}
+
+#telephone{
+    text-decoration: none;
+}
+
+.address p{
+    color: white;
+    margin-bottom: 0;
+}
+
+
+.box2{
+    border-top: 1px solid #878787;
+}
+
+.box2inner{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding: 20px; */
+    margin-top: 35px;
+    gap: 40px;
+}
+
+.box2items{
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    gap: 10px;
+}
+
+.box2anchors{
+    color: white;
+    text-decoration: none;
+}
+
+.box2anchorsicon{
+    width: 23px;   
+}
+
+.creditcards{
+    width: 480px;
+}

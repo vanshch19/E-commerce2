@@ -1,0 +1,61 @@
+<div class="container1">
+      <div class="leftcontainer">
+        Filter Box
+      </div>
+      <div class="rightcontainer">
+        <div class="prodheadingdiv"><span class="prodheading">Monitors</span></div>
+        <br><br>
+
+        <div class="productslist">
+      {{#each products as |product|}}
+          <div class="item">
+            <div class="itemimgdiv">
+              <img class="itemimg" width="200px" height="100px" src="{{product.imageUrl}}" alt="">
+              {{!-- {{#if isExist}} --}}
+              <i class="btn like-btn fa-regular fa-heart heart" productId="{{product.id}}"></i>
+              {{!-- {{#else}} --}}
+              {{!-- <i class="btn like-btn fa-regular fa-heart heart" productId="{{product.id}}"></i> --}}
+              {{!-- {{/else}} --}}
+              {{!-- {{/if}} --}}
+            </div>
+            <div class="itemspec">
+              <div class="itemname">
+                <p style="font-size: 20px;">{{product.name}}</p>
+              </div>
+
+              <div class="itemfeatures">
+                <li>{{product.feature1}}</li>
+                <li>{{product.feature2}}</li>
+                <li>{{product.feature3}}</li>
+                <li>{{product.warranty}}</li>
+              </div>
+            </div>
+
+            <div class="pricebox">
+                <div class="itempricediv">
+                  <span class="itemprice">&#8377; {{product.price}}</span>
+                  <div class="flipkartcertifiedimg">
+                    <img width="90px" src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="">
+                  </div>
+                </div>
+
+                 
+
+                <div class="itemdelchargediv">
+                  <span class="itemdelcharge">Free delivery</span>
+                </div>
+
+                <div class="btns">
+                  <button type="submit" id="{{product.id}}" price="{{product.price}}" class="bynow prodbtns">Buy Now</button>
+                  <button class="addtocart prodbtns"><a class="addtocartanchor prodbtnsanchor" href="/userfunctionality/addtocart?productId={{product._id}}">Add To Cart</a></button>
+                </div>
+            </div>
+          </div>
+      {{/each}}
+        </div>
+
+      </div> 
+      </div> 
+
+      <div class="container2" style="display: none;"></div>  
+  

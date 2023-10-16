@@ -1,0 +1,320 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/********  Navbar Styling  **********/
+
+.navbar1{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 80px;
+    background-color: #2874f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top: 0%;
+}
+
+.navdiv{
+    display: flex;
+    /* gap: 10px; */
+}
+
+.logodiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    width: 120px;
+    height: 35px;
+}
+
+.explore{
+    margin-left: 10px;
+    font-size: 15px;
+    font-style: italic;
+    text-decoration: none;
+    color: white;   
+    font-weight: 550;
+}
+
+.explore:hover{
+    text-decoration: underline;
+}
+
+.plus{
+    color: yellow;
+    font-weight: 550;
+}
+
+.plusimg{
+    width: 13px;
+}
+
+.searchdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.searchinp{
+    height: 45px;
+    width: 480px;
+    /* position: relative; */
+    margin: 0 20px;
+    padding: 0 20px;
+    font-size: 18px;
+    box-shadow: -5px -5px 5px rgba(0,0,0,0.1),
+    5px 5px 5px rgba(0,0,0,0.1);
+    border: none;
+    outline: none;
+}
+
+.searchinp::placeholder{
+    font-size: 17px;
+}
+
+.searchbtn{
+    position: absolute;
+    top: 1.7px;
+    right: 21px;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.searchimg{
+    font-size: 20px;
+    color: #2874f0;
+}
+
+.flipkart{
+    display: flex;
+    align-items: center;
+}
+
+.flipkartanchor{
+    position: relative;
+}
+
+.flipkartcontent{
+    width: 250px;
+    position: absolute;
+    right: -70px;
+
+}
+
+
+/* To make dropdown hoverable */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    box-shadow: -5px -5px 20px rgba(0,0,0,0.2),
+    5px 5px 20px rgba(0,0,0,0.2);
+}
+
+.dropdown .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+}
+
+.sellerdiv{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.morediv{
+    display: flex;
+    align-items: center;
+    margin-left: 18px;
+}
+
+.moreanchor{
+    position: relative;
+}
+
+.morecontent{
+    position: absolute;
+    width: 250px;
+    right: -85px;
+}
+
+.cartdiv{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.cartimg{
+    color: white;
+}
+
+.cartitemnumdiv{
+    position: absolute;
+    background-color: #df6060;
+    bottom: 48px;
+    right: 247px;
+    width: 27px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-weight: 100;
+    padding: 10px;
+}
+
+
+/* form designing */
+
+.formdiv{
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.formItems{
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    width: 30%;
+    margin-left: 40px;
+}
+
+.formLabels{
+    font-size: large;
+    font-family:Arial, Helvetica, sans-serif;
+    /* font-style: italic; */
+    font-weight: 400;
+}
+
+.submitBtn{
+    background-color: gold;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 300px;
+}
+
+.name{
+    margin-left: 70px;
+}
+
+.price{
+    margin-left: 76px;
+}
+
+.warranty{
+    margin-left: 45px;
+}
+
+.category{
+    margin-left: 44px;
+}
+
+.image{
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.discount{
+    margin-left: 47px;
+}
+
+/*   Footer Styling    */
+.footer{
+    background-color: #172337;
+    padding: 40px;
+}
+
+.box1{
+    display: flex;
+    justify-content: space-around;
+    /* gap: 30px; */
+    margin-bottom: 50px;
+    /* border-bottom: 1px solid white; */
+}
+
+.box1items{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.box1heading{
+    margin-bottom: 10px;
+    color: #878787;
+}
+
+.box1anchors{
+    text-decoration: none;
+    color: white;
+}
+
+.box1anchors:hover{
+    text-decoration: underline;
+}
+
+.mail{
+    margin-left: 40px;
+    border-left: 1px solid #878787;
+    padding-left: 30px;
+}
+
+#telephone{
+    text-decoration: none;
+}
+
+.address p{
+    color: white;
+    margin-bottom: 0;
+}
+
+
+.box2{
+    border-top: 1px solid #878787;
+}
+
+.box2inner{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding: 20px; */
+    margin-top: 35px;
+    gap: 40px;
+}
+
+.box2items{
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    gap: 10px;
+}
+
+.box2anchors{
+    color: white;
+    text-decoration: none;
+}
+
+.box2anchorsicon{
+    width: 23px;   
+}
+
+.creditcards{
+    width: 480px;
+}
+
+
+
+
