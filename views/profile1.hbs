@@ -13,7 +13,80 @@
 </head>
 <body>
     
-    {{> navbar}}
+    
+<nav class="navbar1">
+        <div class="navdiv">
+            
+            <div class="logodiv navItems">
+                <a href="/shop/profile1"><img class="logo" src="/images/vckartlogo.png" alt=""></a>
+                <a class="explore" href="#">
+                    Explore
+                    <span class="plus">Plus</span>
+                    <img class="plusimg" src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png" alt="">
+                </a>
+            </div>
+
+            <div class="searchdiv navItems">
+                <input class="searchinp" type="text" placeholder="Search for your products, brands and more">
+                <button class="searchbtn"><i class="fa-solid fa-magnifying-glass searchimg"></i></button>
+            </div>
+
+            <div class="flipkart navItems">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle fs-5 fw-medium border-0 bg-transparent flipkartanchor" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      VcKart
+                    </a>
+                  
+                    <ul class="dropdown-menu flipkartcontent">
+                      <li><a class="dropdown-item" href="/shop/profile1">My Profile</a></li>
+                      {{#if isAdmin}}
+                      <li><a class="dropdown-item" href="/admin/addproduct">Add Products</a></li>
+                      <li><a class="dropdown-item" href="/admin/products">Admin Products</a></li>
+                      {{/if}}
+                      <li><a class="dropdown-item" href="/shop/products">products</a></li>
+                      <li><a class="dropdown-item" href="/userfunctionality/wishlist">WishList</a></li>
+                      <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+                  </div>
+            </div>
+
+            <div class="sellerdiv navItems">
+                <a class="btn btn-secondary fs-5 fw-medium border-0 bg-transparent" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Become a Seller
+                  </a>
+            </div>
+
+            <div class="morediv navItems">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle fs-5 fw-medium border-0 bg-transparent moreanchor" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      More
+                    </a>
+                  
+                    <ul class="dropdown-menu morecontent">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+            </div>
+            </div>
+
+            <div class="cartdiv">
+                <a class="btn btn-secondary fs-5 fw-medium border-0 bg-transparent" href="/shop/cart">
+                  <i class="fa-solid fa-cart-shopping fa-lg cartimg">
+                    {{#if cartCount}}
+                    <div class="cartitemnumdiv">{{cartCount}}</div>
+                    {{#else}}
+                    <div class="cartitemnumdiv hidden"></div>
+                    {{/else}}
+                    {{/if}}
+                  </i>
+                    Cart
+                  </a>
+            </div>
+        </div>
+    </nav>
+
 
     <br>
 
@@ -103,7 +176,7 @@
               
               <div class="items">
                 <div class="itemimgdiv">
-                  <a href="/userfunctionality/certainprod?type=powerbank"><img class="itemimg" src="https://rukminim2.flixcart.com/image/400/400/xif0q/power-bank/d/a/f/-original-imagky3e8yp5ebvr.jpeg?q=70" alt=""></a>
+                  <a href="/userfunctionality/certainprod?type=power bank"><img class="itemimg" src="https://rukminim2.flixcart.com/image/400/400/xif0q/power-bank/d/a/f/-original-imagky3e8yp5ebvr.jpeg?q=70" alt=""></a>
                 </div>
                 
                 <div class="itemtitlediv fw-medium">
@@ -211,7 +284,7 @@
     <br>
 
     <!-- beauty, food, toys -->
-    <div class="beauty&toys productsBox">
+    <div class="beautytoys productsBox">
       <div class="productsBoxInfo">
         <div class="elech2 productsBoxInfoh2">
           <h2>Beauty, Food,Toys & more</h2>

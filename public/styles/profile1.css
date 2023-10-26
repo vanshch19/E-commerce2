@@ -279,21 +279,6 @@ body{
     font-size: 18px;
 }
 
-
-/* items caraousel */
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #f1f4fd;
-  } */
   
   .container {
     max-width: 1200px;
@@ -405,6 +390,15 @@ body{
     bottom: -10px;
   }
   
+  @media screen and (max-width: 1000px) {
+    body{
+        color: black
+        
+    }
+}
+
+
+
   /* Styles for mobile and tablets */
   @media only screen and (max-width: 1023px) {
     .slider-wrapper .slide-button {
@@ -515,3 +509,12 @@ body{
 .creditcards{
     width: 480px;
 }
+
+
+
+
+
+
+/* Tablets */
+
+
